@@ -1,0 +1,863 @@
+/* =========================================================
+   ADMIN COURSES
+   /admin/courses
+========================================================= */
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.admin-toolbar {
+  width: 100%;
+
+  margin-bottom: 22px;
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px
+    rgba(16, 24, 40, .03);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.admin-search-box {
+  position: relative;
+
+  width: min(430px, 100%);
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+.admin-search-box:focus-within {
+  border-color: #7f56d9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(127, 86, 217, .10);
+}
+
+
+.admin-search-box > span {
+  width: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #667085;
+
+  font-size: 17px;
+
+  pointer-events: none;
+}
+
+
+.admin-search-box input {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    0
+    14px
+    0
+    0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #101828;
+
+  font-size: 13px;
+}
+
+
+.admin-search-box input::placeholder {
+  color: #98a2b3;
+}
+
+
+.admin-search-box input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   STATUS FILTER
+========================================================= */
+
+.admin-filter-select {
+  min-width: 190px;
+  height: 44px;
+
+  padding:
+    0
+    38px
+    0
+    14px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  outline: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #667085 50%
+    )
+    calc(100% - 17px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat,
+
+    linear-gradient(
+      135deg,
+      #667085 50%,
+      transparent 50%
+    )
+    calc(100% - 12px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat,
+
+    #ffffff;
+
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+.admin-filter-select:focus {
+  border-color: #7f56d9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(127, 86, 217, .10);
+}
+
+
+/* =========================================================
+   COURSE LIST
+========================================================= */
+
+.admin-course-list {
+  display: grid;
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   COURSE CARD
+========================================================= */
+
+.admin-course-card {
+  position: relative;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    225px;
+
+  overflow: hidden;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px
+    rgba(16, 24, 40, .025);
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
+}
+
+
+.admin-course-card:hover {
+  border-color: #d6bbfb;
+
+  box-shadow:
+    0 10px 30px
+    rgba(16, 24, 40, .06);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/*
+ * Accent line
+ */
+
+.admin-course-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #7f56d9,
+      #9e77ed
+    );
+}
+
+
+/* =========================================================
+   COURSE MAIN
+========================================================= */
+
+.admin-course-main {
+  min-width: 0;
+
+  padding:
+    24px
+    26px
+    23px
+    28px;
+}
+
+
+.admin-course-title-row {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.admin-course-title-row > div:first-child {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+.admin-course-title-row h3 {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: -.015em;
+}
+
+
+.admin-course-menu {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.admin-course-description {
+  max-width: 850px;
+
+  margin:
+    12px
+    0
+    20px;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.admin-status-badge {
+  min-height: 25px;
+
+  padding:
+    0
+    9px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .025em;
+
+  text-transform: uppercase;
+}
+
+
+.admin-status-active {
+  border: 1px solid #abefc6;
+
+  background: #ecfdf3;
+
+  color: #067647;
+}
+
+
+.admin-status-draft {
+  border: 1px solid #fedf89;
+
+  background: #fffaeb;
+
+  color: #b54708;
+}
+
+
+.admin-status-inactive {
+  border: 1px solid #e4e7ec;
+
+  background: #f2f4f7;
+
+  color: #475467;
+}
+
+
+/* =========================================================
+   COURSE METRICS
+========================================================= */
+
+.admin-course-metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(120px, 1fr)
+    );
+
+  gap: 10px;
+}
+
+
+.admin-course-metric {
+  min-width: 0;
+
+  padding:
+    12px
+    14px;
+
+  display: grid;
+
+  gap: 5px;
+
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+
+  background: #f9fafb;
+}
+
+
+.admin-course-metric span {
+  color: #667085;
+
+  font-size: 10px;
+
+  line-height: 1.3;
+}
+
+
+.admin-course-metric strong {
+  color: #101828;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   COURSE WARNING
+========================================================= */
+
+.admin-course-warning {
+  margin-top: 15px;
+
+  padding:
+    11px
+    13px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border: 1px solid #fedf89;
+  border-radius: 9px;
+
+  background: #fffaeb;
+
+  color: #93370d;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.admin-course-warning strong {
+  flex-shrink: 0;
+
+  color: #b54708;
+
+  font-size: 10px;
+}
+
+
+.admin-course-warning span {
+  color: #93370d;
+}
+
+
+/* =========================================================
+   COURSE SIDE
+========================================================= */
+
+.admin-course-side {
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border-left: 1px solid #eaecf0;
+
+  background: #fcfcfd;
+}
+
+
+.admin-course-side
+.admin-outline-button {
+  width: 100%;
+
+  min-height: 42px;
+}
+
+
+.admin-course-side
+.admin-danger-button {
+  width: 100%;
+
+  min-height: 40px;
+}
+
+
+/* =========================================================
+   STATUS SELECT
+========================================================= */
+
+.admin-course-status-select {
+  width: 100%;
+  min-height: 42px;
+
+  padding:
+    0
+    36px
+    0
+    13px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  outline: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #667085 50%
+    )
+    calc(100% - 16px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat,
+
+    linear-gradient(
+      135deg,
+      #667085 50%,
+      transparent 50%
+    )
+    calc(100% - 11px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat,
+
+    #ffffff;
+
+  color: #344054;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+.admin-course-status-select:hover {
+  border-color: #98a2b3;
+}
+
+
+.admin-course-status-select:focus {
+  border-color: #7f56d9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(127, 86, 217, .10);
+}
+
+
+.admin-course-status-select:disabled {
+  opacity: .55;
+
+  cursor: not-allowed;
+
+  background-color: #f2f4f7;
+}
+
+
+/* =========================================================
+   SMALL BUTTON
+========================================================= */
+
+.admin-course-menu
+.admin-small-button {
+  min-height: 34px;
+
+  padding:
+    0
+    12px;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    border-color .18s ease,
+    background .18s ease,
+    color .18s ease;
+}
+
+
+.admin-course-menu
+.admin-small-button:hover {
+  border-color: #b692f6;
+
+  background: #f9f5ff;
+
+  color: #6941c6;
+}
+
+
+/* =========================================================
+   DANGER BUTTON
+========================================================= */
+
+.admin-danger-button {
+  min-height: 40px;
+
+  padding:
+    0
+    13px;
+
+  border: 1px solid #fecdca;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #b42318;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition:
+    border-color .18s ease,
+    background .18s ease,
+    color .18s ease;
+}
+
+
+.admin-danger-button:hover:not(:disabled) {
+  border-color: #fda29b;
+
+  background: #fef3f2;
+
+  color: #912018;
+}
+
+
+.admin-danger-button:disabled {
+  opacity: .5;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.admin-empty-state {
+  min-height: 260px;
+
+  padding: 50px 25px;
+
+  display: grid;
+
+  align-content: center;
+  justify-items: center;
+
+  text-align: center;
+}
+
+
+.admin-empty-state::before {
+  content: "?";
+
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 14px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: #f4f3ff;
+
+  color: #6941c6;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+.admin-empty-state h3 {
+  margin:
+    0
+    0
+    7px;
+
+  color: #101828;
+
+  font-size: 14px;
+}
+
+
+.admin-empty-state p {
+  max-width: 360px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .admin-course-card {
+    grid-template-columns:
+      minmax(0, 1fr)
+      205px;
+  }
+
+
+  .admin-course-metrics {
+    grid-template-columns:
+      repeat(2, minmax(120px, 1fr));
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .admin-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .admin-search-box {
+    width: 100%;
+  }
+
+
+  .admin-filter-select {
+    width: 100%;
+  }
+
+
+  .admin-course-card {
+    grid-template-columns: 1fr;
+  }
+
+
+  .admin-course-side {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    border-top: 1px solid #eaecf0;
+    border-left: 0;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-course-main {
+    padding:
+      20px
+      18px
+      18px
+      21px;
+  }
+
+
+  .admin-course-title-row {
+    flex-direction: column;
+  }
+
+
+  .admin-course-menu {
+    width: 100%;
+  }
+
+
+  .admin-course-menu
+  .admin-small-button {
+    width: 100%;
+  }
+
+
+  .admin-course-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .admin-course-warning {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .admin-course-side {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .admin-course-metrics {
+    grid-template-columns: 1fr;
+  }
+
+}

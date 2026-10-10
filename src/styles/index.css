@@ -1,0 +1,30 @@
+/* Global */
+@import './base.css';
+
+/* Authentication */
+@import './auth/auth.css';
+
+/* User platform */
+@import './platform/header.css';
+@import './platform/courses.css';
+@import './platform/exam.css';
+@import './platform/results.css';
+@import './platform/history.css';
+
+/* Administration */
+@import './admin/layout.css';
+@import './admin/courses.css';
+@import './admin/questions.css';
+@import './admin/import.css';
+@import './admin/users.css';
+@import './admin/user-detail.css';
+@import './admin/attempt-detail.css';
+@import './admin/reports.css';
+@import './admin/course-report.css';
+
+/* Public landing */
+@import './public/base.css';
+@import './public/header.css';
+@import './public/hero.css';
+@import './public/sections.css';
+@import './public/footer.css';

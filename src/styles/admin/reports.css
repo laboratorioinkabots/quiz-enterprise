@@ -1,0 +1,307 @@
+/* =========================================
+   ADMIN REPORTS
+========================================= */
+
+.admin-report-filters {
+  display: flex;
+
+  align-items: end;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  padding: 16px;
+
+  background: white;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 11px;
+}
+
+
+.admin-report-filters
+.admin-field {
+  min-width: 180px;
+
+  margin-bottom: 0;
+}
+
+
+.admin-report-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+.admin-report-stat {
+  padding: 18px 20px;
+
+  display: grid;
+
+  gap: 6px;
+
+  background: white;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 11px;
+}
+
+
+.admin-report-stat span {
+  color: #667085;
+
+  font-size: 10px;
+}
+
+
+.admin-report-stat strong {
+  color: #101828;
+
+  font-size: 25px;
+}
+
+
+.admin-report-stat.success strong {
+  color: #027a48;
+}
+
+
+.admin-report-stat.score strong {
+  color: #5925dc;
+}
+
+
+/* TABLE */
+
+.admin-report-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+
+.admin-report-table th {
+  padding:
+    11px
+    13px;
+
+  text-align: left;
+
+  background: #f8f9fb;
+
+  color: #667085;
+
+  border-bottom:
+    1px solid #e4e7ec;
+
+  font-size: 9px;
+}
+
+
+.admin-report-table td {
+  padding:
+    12px
+    13px;
+
+  border-bottom:
+    1px solid #f0f2f5;
+
+  color: #475467;
+
+  font-size: 10px;
+}
+
+
+.admin-report-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* APPROVAL */
+
+.admin-approval-badge {
+  display: inline-flex;
+
+  padding:
+    5px
+    7px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.admin-approval-badge.high {
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+
+.admin-approval-badge.medium {
+  background: #fffaeb;
+
+  color: #b54708;
+}
+
+
+.admin-approval-badge.low {
+  background: #fef3f2;
+
+  color: #b42318;
+}
+
+
+/* GRID */
+
+.admin-report-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.3fr 1fr;
+
+  gap: 20px;
+}
+
+
+/* DIFFICULT QUESTIONS */
+
+.admin-difficult-list,
+.admin-report-user-list {
+  display: grid;
+}
+
+
+.admin-difficult-item,
+.admin-report-user {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    12px
+    0;
+
+  border-bottom:
+    1px solid #f0f2f5;
+}
+
+
+.admin-difficult-item:last-child,
+.admin-report-user:last-child {
+  border-bottom: none;
+}
+
+
+.admin-difficult-rank {
+  width: 28px;
+
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: #f2f4f7;
+
+  color: #475467;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.admin-difficult-content,
+.admin-report-user > div:nth-child(2) {
+  flex: 1;
+
+  min-width: 0;
+
+  display: grid;
+
+  gap: 3px;
+}
+
+
+.admin-difficult-content strong,
+.admin-report-user strong {
+  color: #344054;
+
+  font-size: 10px;
+}
+
+
+.admin-difficult-content span,
+.admin-report-user span {
+  color: #98a2b3;
+
+  font-size: 8px;
+}
+
+
+.admin-error-rate {
+  color: #b42318;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .admin-report-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .admin-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-report-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-report-filters {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .admin-report-filters
+  .admin-field {
+    width: 100%;
+  }
+
+}

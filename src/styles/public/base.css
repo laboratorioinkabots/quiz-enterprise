@@ -1,0 +1,184 @@
+/* =========================================
+   PUBLIC LANDING
+========================================= */
+.public-page {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #ffffff;
+
+  color: #101828;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.public-container {
+  width: min(
+    1180px,
+    calc(100% - 48px)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================
+   HERO SHELL
+========================================= */
+
+.public-hero-shell {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(1, 12, 17, .97) 0%,
+      rgba(1, 18, 23, .91) 35%,
+      rgba(0, 14, 18, .68) 68%,
+      rgba(0, 0, 0, .62) 100%
+    ),
+    url('../../assets/public/network-background.jpg');
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+
+/*
+ * Capa oscura para asegurar
+ * legibilidad independientemente
+ * de la imagen.
+ */
+
+.public-hero-shell::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 5, 8, .05),
+      rgba(0, 5, 8, .32)
+    );
+}
+
+
+/*
+ * Glow decorativo.
+ */
+
+.public-hero-shell::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -250px;
+  top: 120px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 220, 230, .08),
+      transparent 65%
+    );
+}
+
+
+/* =========================================
+   GENERIC PUBLIC
+========================================= */
+
+.public-eyebrow {
+  display: inline-flex;
+
+  color: #7f56d9;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .11em;
+
+  text-transform: uppercase;
+}
+
+
+.public-secondary-button {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+
+.public-secondary-button:hover {
+  border-color: #b692f6;
+
+  color: #6941c6;
+
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 700px) {
+
+  .public-container {
+    width:
+      min(
+        calc(100% - 28px),
+        1180px
+      );
+  }
+
+}

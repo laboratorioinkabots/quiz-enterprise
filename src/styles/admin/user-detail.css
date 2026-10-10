@@ -1,0 +1,528 @@
+/* =========================================
+   ADMIN USER DETAIL
+========================================= */
+
+.admin-user-detail-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 22px;
+
+  padding: 24px;
+
+  background: white;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0
+    1px
+    2px
+    rgba(16,24,40,.03);
+}
+
+
+.admin-user-detail-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+
+.admin-user-detail-avatar {
+  width: 62px;
+
+  height: 62px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f4f3ff;
+
+  color: #5925dc;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+.admin-user-detail-back {
+  margin-bottom: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.admin-user-detail-profile h1 {
+  margin:
+    0
+    0
+    3px;
+
+  color: #101828;
+
+  font-size: 23px;
+
+  letter-spacing: -.03em;
+}
+
+
+.admin-user-detail-email {
+  color: #667085;
+
+  font-size: 11px;
+}
+
+
+.admin-user-detail-badges {
+  display: flex;
+
+  gap: 7px;
+
+  margin-top: 10px;
+}
+
+
+.admin-user-role-badge,
+.admin-user-status-badge {
+  padding:
+    5px
+    8px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+.admin-user-role-badge {
+  background: #f2f4f7;
+
+  color: #475467;
+}
+
+
+.admin-user-role-admin {
+  background: #f4f3ff;
+
+  color: #5925dc;
+}
+
+
+.admin-user-status-badge.active {
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+
+.admin-user-status-badge.inactive {
+  background: #fef3f2;
+
+  color: #b42318;
+}
+
+
+.admin-user-detail-meta {
+  display: grid;
+
+  gap: 4px;
+
+  text-align: right;
+}
+
+
+.admin-user-detail-meta span {
+  color: #98a2b3;
+
+  font-size: 10px;
+}
+
+
+.admin-user-detail-meta strong {
+  color: #344054;
+
+  font-size: 11px;
+}
+
+
+/* STATS */
+
+.admin-user-detail-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+.admin-user-detail-stat {
+  padding: 18px 20px;
+
+  display: grid;
+
+  gap: 6px;
+
+  background: white;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 11px;
+}
+
+
+.admin-user-detail-stat span {
+  color: #667085;
+
+  font-size: 10px;
+}
+
+
+.admin-user-detail-stat strong {
+  color: #101828;
+
+  font-size: 25px;
+}
+
+
+.admin-user-detail-stat.success strong {
+  color: #027a48;
+}
+
+
+.admin-user-detail-stat.score strong {
+  color: #5925dc;
+}
+
+
+/* COURSE PERFORMANCE */
+
+.admin-user-course-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+
+.admin-user-course-card {
+  padding: 18px;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 11px;
+
+  background: #fff;
+}
+
+
+.admin-user-course-heading {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+}
+
+
+.admin-user-course-heading > div {
+  display: grid;
+
+  gap: 3px;
+}
+
+
+.admin-user-course-heading span {
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+
+.admin-user-course-heading h3 {
+  margin: 0;
+
+  color: #101828;
+
+  font-size: 14px;
+}
+
+
+.admin-course-result {
+  padding:
+    5px
+    8px;
+
+  border-radius: 999px;
+
+  font-size: 9px !important;
+
+  font-weight: 800;
+}
+
+
+.admin-course-result.passed {
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+
+.admin-course-result.failed {
+  background: #fef3f2;
+
+  color: #b42318;
+}
+
+
+.admin-user-course-metrics {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+
+.admin-user-course-metric {
+  padding:
+    9px
+    10px;
+
+  display: grid;
+
+  gap: 4px;
+
+  border-radius: 8px;
+
+  background: #f8f9fb;
+}
+
+
+.admin-user-course-metric span {
+  color: #667085;
+
+  font-size: 9px;
+}
+
+
+.admin-user-course-metric strong {
+  color: #101828;
+
+  font-size: 13px;
+}
+
+
+.admin-user-course-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 5px;
+
+  margin-top: 13px;
+
+  padding-top: 11px;
+
+  border-top:
+    1px solid #f0f2f5;
+
+  color: #667085;
+
+  font-size: 9px;
+}
+
+
+/* HISTORY */
+
+.admin-history-count {
+  padding:
+    5px
+    8px;
+
+  border-radius: 999px;
+
+  background: #f2f4f7;
+
+  color: #475467;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+.admin-user-history-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+
+.admin-user-history-table th {
+  padding:
+    11px
+    13px;
+
+  text-align: left;
+
+  background: #f8f9fb;
+
+  color: #667085;
+
+  border-bottom:
+    1px solid #e4e7ec;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+.admin-user-history-table td {
+  padding:
+    12px
+    13px;
+
+  border-bottom:
+    1px solid #f0f2f5;
+
+  color: #475467;
+
+  font-size: 10px;
+}
+
+
+.admin-user-history-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.admin-user-history-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+
+.admin-attempt-status,
+.admin-history-result {
+  display: inline-flex;
+
+  padding:
+    5px
+    7px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.admin-attempt-status.completed {
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+
+.admin-attempt-status.progress {
+  background: #fffaeb;
+
+  color: #b54708;
+}
+
+
+.admin-history-result.passed {
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+
+.admin-history-result.failed {
+  background: #fef3f2;
+
+  color: #b42318;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .admin-user-detail-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .admin-user-course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-user-course-metrics {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-user-detail-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .admin-user-detail-meta {
+    text-align: left;
+  }
+
+  .admin-user-detail-stats {
+    grid-template-columns: 1fr;
+  }
+
+}

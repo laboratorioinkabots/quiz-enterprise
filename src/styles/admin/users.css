@@ -1,0 +1,620 @@
+/* =========================================
+   ADMIN USERS
+========================================= */
+
+.admin-user-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.admin-user-stat {
+  padding: 18px 20px;
+
+  display: grid;
+
+  gap: 6px;
+
+  background: white;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius: 11px;
+}
+
+.admin-user-stat span {
+  color: #667085;
+
+  font-size: 11px;
+}
+
+.admin-user-stat strong {
+  color: #101828;
+
+  font-size: 26px;
+}
+
+.admin-user-stat.success strong {
+  color: #027a48;
+}
+
+.admin-user-stat.admin strong {
+  color: #5925dc;
+}
+
+.admin-user-stat.danger strong {
+  color: #b42318;
+}
+
+
+/* TABLE */
+
+.admin-users-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.admin-users-table th {
+  padding:
+    11px
+    13px;
+
+  text-align: left;
+
+  background: #f8f9fb;
+
+  color: #667085;
+
+  border-bottom:
+    1px solid #e4e7ec;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.admin-users-table td {
+  padding:
+    13px;
+
+  border-bottom:
+    1px solid #f0f2f5;
+
+  vertical-align: middle;
+
+  font-size: 11px;
+}
+
+.admin-users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-users-table tbody tr:hover {
+  background: #fafbfc;
+}
+
+
+/* PROFILE */
+
+.admin-user-table-profile {
+  min-width: 220px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.admin-user-table-avatar {
+  width: 36px;
+
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f4f3ff;
+
+  color: #5925dc;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.admin-user-table-profile > div:last-child {
+  min-width: 0;
+
+  display: grid;
+
+  gap: 3px;
+}
+
+.admin-user-table-profile strong {
+  color: #101828;
+
+  font-size: 11px;
+}
+
+.admin-user-table-profile span {
+  color: #667085;
+
+  font-size: 10px;
+}
+
+
+/* ROLE */
+
+.admin-user-role-select {
+  min-height: 32px;
+
+  padding:
+    0
+    8px;
+
+  border:
+    1px solid #d0d5dd;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #344054;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* STATUS */
+
+.admin-user-status-select {
+  min-height: 32px;
+
+  padding:
+    0
+    8px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.admin-user-status-select.active {
+  border:
+    1px solid #abefc6;
+
+  background: #ecfdf3;
+
+  color: #027a48;
+}
+
+.admin-user-status-select.inactive {
+  border:
+    1px solid #fecdca;
+
+  background: #fef3f2;
+
+  color: #b42318;
+}
+
+
+/* ATTEMPTS */
+
+.admin-user-attempts {
+  display: grid;
+
+  gap: 2px;
+}
+
+.admin-user-attempts strong {
+  font-size: 13px;
+}
+
+.admin-user-attempts span {
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+
+/* SCORE */
+
+.admin-user-score {
+  color: #344054;
+
+  font-size: 13px;
+}
+
+.admin-empty-value {
+  color: #98a2b3;
+}
+
+
+/* CURRENT USER */
+
+.admin-current-user-label {
+  display: inline-flex;
+
+  margin-left: 7px;
+
+  padding:
+    4px
+    7px;
+
+  border-radius: 999px;
+
+  background: #eff4ff;
+
+  color: #3538cd;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .admin-user-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .admin-user-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   ADMIN USERS - TOOLBAR
+========================================================= */
+
+.admin-users-toolbar {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px
+    rgba(16, 24, 40, .03);
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.admin-users-search {
+  position: relative;
+
+  width: min(420px, 100%);
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+.admin-users-search:focus-within {
+  border-color: #7f56d9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(127, 86, 217, .10);
+}
+
+
+.admin-users-search-icon {
+  width: 42px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: #667085;
+
+  font-size: 17px;
+
+  pointer-events: none;
+}
+
+
+.admin-users-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 38px 0 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #101828;
+
+  font-size: 13px;
+}
+
+
+.admin-users-search input::placeholder {
+  color: #98a2b3;
+}
+
+
+.admin-users-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+
+.admin-users-search-clear {
+  position: absolute;
+
+  right: 8px;
+  top: 50%;
+
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #98a2b3;
+
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+.admin-users-search-clear:hover {
+  background: #f2f4f7;
+
+  color: #475467;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.admin-users-filters {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.admin-users-select-wrapper {
+  position: relative;
+
+  min-width: 180px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d0d5dd;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease;
+}
+
+
+.admin-users-select-wrapper:focus-within {
+  border-color: #7f56d9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(127, 86, 217, .10);
+}
+
+
+.admin-users-filter-label {
+  position: absolute;
+
+  top: -7px;
+  left: 10px;
+
+  z-index: 2;
+
+  padding: 0 5px;
+
+  background: #ffffff;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  line-height: 14px;
+}
+
+
+.admin-users-select-wrapper select {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    0
+    36px
+    0
+    12px;
+
+  border: 0;
+  outline: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #667085 50%
+    )
+    calc(100% - 16px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat,
+
+    linear-gradient(
+      135deg,
+      #667085 50%,
+      transparent 50%
+    )
+    calc(100% - 11px)
+    calc(50% - 2px)
+    / 5px 5px
+    no-repeat;
+
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CLEAR FILTERS
+========================================================= */
+
+.admin-users-clear-filters {
+  min-height: 44px;
+
+  padding: 0 14px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #f4f3ff;
+
+  color: #5925dc;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background .18s ease,
+    color .18s ease;
+}
+
+
+.admin-users-clear-filters:hover {
+  background: #ebe9fe;
+
+  color: #4a1fb8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .admin-users-toolbar {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .admin-users-search {
+    width: 100%;
+  }
+
+
+  .admin-users-filters {
+    width: 100%;
+  }
+
+
+  .admin-users-select-wrapper {
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .admin-users-filters {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .admin-users-select-wrapper {
+    width: 100%;
+  }
+
+
+  .admin-users-clear-filters {
+    width: 100%;
+  }
+
+}
